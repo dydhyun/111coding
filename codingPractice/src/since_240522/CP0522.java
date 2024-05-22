@@ -1,8 +1,7 @@
 package since_240522;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.lang.reflect.Array;
+import java.util.*;
 import java.util.stream.IntStream;
 
 // collection, stream 연습하기
@@ -24,6 +23,11 @@ public class CP0522 {
 
         System.out.println(sol.solutionBiggerThanN(numArr, 10));
 
+        System.out.println(Arrays.toString(sol.solutionElementDivN(numArr,2)));
+
+        System.out.println(Arrays.toString(sol.solutionElementNewList(numArr, 3)));
+
+        System.out.println(Arrays.toString(sol.solutionReverseOrder(numArr, 5)));
 
     }
     public int solutionDotLocation(int[] dot) {
@@ -99,6 +103,58 @@ public class CP0522 {
             return sum[0];
         });
         return sum[0];
+    }
+
+    public int[] solutionElementDivN(int[] num_list, int n) {
+//        if(num_list.length < n) {
+//            return new int[0];
+//        }
+//        List<Integer> nList = new ArrayList<>();
+//        for (int i = 0; i < num_list.length; i += n){
+//            nList.add(num_list[i]);
+//        }
+//       int[] answer = nList.stream().mapToInt(Integer::intValue).toArray();
+//
+//        return answer;
+        return IntStream.iterate(0, i -> i < num_list.length, i -> i + n)
+                .map(i -> num_list[i]).toArray();
+    }
+
+    public int[] solutionElementNewList(int[] num_list, int n) {
+//        int[] answer = {};
+//        List<Integer> numList = new ArrayList<>();
+//        for(int i = 0; i < n; i++) {
+//            numList.add(num_list[i]);
+//        }
+//        return numList.stream().mapToInt(Integer::intValue).toArray();
+
+//        answer = numList.stream().mapToInt(Integer::intValue).toArray();
+//        return answer;
+
+//        int[] answer = Arrays.stream(num_list).limit(n).toArray();
+//        return answer;
+
+//        return IntStream.of(num_list).limit(n).toArray();
+
+        int[] answer = Arrays.copyOfRange(num_list,0,n);
+        return answer;
+    }
+
+    public int[] solutionReverseOrder(int[] num_list, int n) {
+        // 기본타입 배열은 Comparator 사용불가 -> boxing 필요
+//         return Arrays.stream(num_list).boxed()
+//                 .sorted(Comparator.reverseOrder()).mapToInt(Integer::intValue).toArray();
+        List<Integer> nReverseList = new ArrayList<>();
+//        for (int i = n; i < num_list.length; i++){
+//            nReverseList.add(num_list[i]);
+//        }
+//        for (int i = 0; i < n; i++){
+//            nReverseList.add(num_list[i]);
+//        }
+//        return nReverseList.stream().mapToInt(Integer::intValue).toArray();
+
+        return IntStream.range(0, num_list.length).map(i -> num_list[(i + n) % num_list.length]).toArray();
+
     }
 
 
