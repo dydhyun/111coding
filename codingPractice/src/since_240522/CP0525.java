@@ -2,10 +2,10 @@ package since_240522;
 
 import java.lang.reflect.Array;
 import java.util.*;
-
+// 프로그래머스 코딩테스트 연습 > 오픈채팅방
 public class CP0525 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+//        Scanner sc = new Scanner(System.in);
         CP0525 sol = new CP0525();
 
         String[] record = {"Enter uid1234 Muzi",
