@@ -11,10 +11,8 @@ public class Programmers_Watermelon {
     // solution을 완성하세요.
     // 예를들어 n이 4이면 "수박수박"을 리턴하고 3이라면 "수박수"를 리턴하면 됩니다.
     public String solution(int n) {
-//        StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
 //        sb.append("수");
-
-        String answer = "";
 
 //        for(int i = 2; i <= n; i++){
 //            if(i % 2 == 0){
@@ -25,10 +23,9 @@ public class Programmers_Watermelon {
 //            }
 //        }
         for (int i = 0; i < n; i++){
-            answer += (i%2==0) ? "수" : "박";
+             sb.append( (i%2==0) ? "수" : "박");
         }
-        return answer;
-//        return sb.toString();
+        return sb.toString();
     }
 
 
