@@ -1,4 +1,4 @@
-package since_240522;
+package since_24_06;
 
 import java.util.Arrays;
 
