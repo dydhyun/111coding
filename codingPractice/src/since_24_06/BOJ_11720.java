@@ -7,14 +7,6 @@ public class BOJ_11720 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-//        long n = Long.parseLong(br.readLine());
-//        long input = Long.parseLong(br.readLine());
-//        long sum = 0;
-//        for(int i = 0; i < n; i++){
-//            sum += input % 10;
-//            input /= 10;
-//        }
-
         String n = br.readLine();
         String input = br.readLine();
         System.out.println(n);
