@@ -14,7 +14,8 @@ public class BOJ_10818 {
         int min = Integer.MAX_VALUE;
         int max = Integer.MIN_VALUE;
         int var = 0;
-        while (st.hasMoreTokens()){
+//        while (st.hasMoreTokens()){
+        while(n-- > 0){
             var = Integer.parseInt(st.nextToken());
             if (min > var)
                 min = var;
